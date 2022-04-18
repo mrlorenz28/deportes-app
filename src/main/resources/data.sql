@@ -24,6 +24,9 @@ INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 5);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 6);
 
 INSERT INTO diagnostico (id, nombre) VALUES (1, 'DOLOR AGUDO'), (2, 'DOLOR GRAVE');
+INSERT INTO procedimiento (id, nombre) VALUES (1, 'Medicación Respiratoria Administrada Mediante Nebulizador'), (2, 'Administración De Infusión De Hierro');
+INSERT INTO medicamento (id, nombre) VALUES (1, 'IBUPROFENO 600'), (2, 'DICLOFENA 400');
+
 
 INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 1);
 INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 2);

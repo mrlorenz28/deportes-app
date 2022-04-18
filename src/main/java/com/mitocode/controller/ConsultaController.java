@@ -15,10 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mitocode.model.Diagnostico;
 import com.mitocode.model.Grupo_sanguineo;
 import com.mitocode.model.Historial_Vacuna;
+import com.mitocode.model.Medicamento;
 import com.mitocode.model.Paciente;
+import com.mitocode.model.Procedimiento;
 import com.mitocode.model.Vacuna;
 import com.mitocode.repo.IDiagnosticoRepo;
 import com.mitocode.repo.IHistorial_VacunasRepo;
+import com.mitocode.repo.IMedicamentoRepo;
+import com.mitocode.repo.IProcedimientoRepo;
 import com.mitocode.repo.IVacunaRepo;
 import com.mitocode.service.IHistorial_VacunasService;
 import com.mitocode.service.IPacienteService;
@@ -35,6 +39,12 @@ public class ConsultaController {
 	@Autowired
 	private IDiagnosticoRepo diagnostico;
 	
+	@Autowired
+	private IProcedimientoRepo procedimiento;
+	
+	@Autowired
+	private IMedicamentoRepo medicamento;
+	
 	@GetMapping
 	public List<Paciente> listar() throws Exception{
 		return service.listar();
@@ -43,6 +53,16 @@ public class ConsultaController {
 	@GetMapping("/diagnostico")
 	public List<Diagnostico> ListarDiagnostico() throws Exception{
 		return diagnostico.findAll();
+	}
+	
+	@GetMapping("/procedimiento")
+	public List<Procedimiento> ListarProcedimiento() throws Exception{
+		return procedimiento.findAll();
+	}
+	
+	@GetMapping("/medicamento")
+	public List<Medicamento> ListarMedicamentos() throws Exception{
+		return medicamento.findAll();
 	}
 	
 	
