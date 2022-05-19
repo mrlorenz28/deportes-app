@@ -1,47 +1,41 @@
-INSERT INTO usuario (id_usuario, username, estado, clave) VALUES (1, 'admin', true, '$2a$10$/Se8jFFS45fT2uiJ8qq9kOL6afdgTcg70RYc.4C/NWvxKH7exjZFa');
+INSERT INTO usuario (id_usuario, username, estado, clave) VALUES (1, 'admin', true, '$2a$10$/Se8jFFS45fT2uiJ8qq9kOL6afdgTcg70RYc.4C/NWvxKH7exjZFa') on conflict (id_usuario) do nothing;
 
-INSERT INTO menu (id_menu, nombre, icono, url) VALUES (1, 'Usuarios', 'home', '/pages/usuarios') on conflict (id_menu) do nothing;
-INSERT INTO menu (id_menu, nombre, icono, url) VALUES (2, 'Pacientes', 'home', '/pages/paciente/listar') on conflict (id_menu) do nothing;
-INSERT INTO menu (id_menu, nombre, icono, url) VALUES (3, 'Admision', 'home', '/pages/admision') on conflict (id_menu) do nothing;
-INSERT INTO menu (id_menu, nombre, icono, url) VALUES (4, 'Citas', 'home', '/pages/citas') on conflict (id_menu) do nothing;
-INSERT INTO menu (id_menu, nombre, icono, url) VALUES (5, 'Agenda', 'home', '/pages/agenda') on conflict (id_menu) do nothing;
-INSERT INTO menu (id_menu, nombre, icono, url) VALUES (6, 'Consulta', 'home', '/pages/consulta') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (1, 'Dashboard', 'home', '/pages/administracion/dashboard') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (2, 'Dashboard', 'home', '/pages/medico/dashboard') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (3, 'Dashboard', 'home', '/pages/pediatra/dashboard') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (4, 'Dashboard', 'home', '/pages/enfermera/dashboard') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (5, 'Usuarios', 'people', '/pages/usuarios') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (6, 'Pacientes', 'people', '/pages/pacientes/listar') on conflict (id_menu) do nothing;
+
+INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (1, 'administrador', '') on conflict (id_rol) do nothing;
+INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (2, 'medico', '') on conflict (id_rol) do nothing;
+INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (3, 'enfermera', '') on conflict (id_rol) do nothing;
+INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (4, 'pediatra', '') on conflict (id_rol) do nothing;
+INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (5, 'db', '') on conflict (id_rol) do nothing;
 
 
-INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (1, 'usuarios', 'Crud de usuario') on conflict (id_rol) do nothing;
-INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (2, 'pacientes', 'Crud y listado de pacientes') on conflict (id_rol) do nothing;
-INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (3, 'admision', 'listado de turnos por medico') on conflict (id_rol) do nothing;
-INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (4, 'citas', 'turnos por medico') on conflict (id_rol) do nothing;
-INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (5, 'agenda', 'Agenda de turnos') on conflict (id_rol) do nothing;
-INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (6, 'Consulta', 'Agenda de turnos') on conflict (id_rol) do nothing;
-
+INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 1);
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (1, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 1);
+
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 2);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 3);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 4);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 3);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 4);
+
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 5);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 6);
+
 
 INSERT INTO diagnostico (id, nombre) VALUES (1, 'DOLOR AGUDO'), (2, 'DOLOR GRAVE');
 INSERT INTO procedimiento (id, nombre) VALUES (1, 'Medicación Respiratoria Administrada Mediante Nebulizador'), (2, 'Administración De Infusión De Hierro');
 INSERT INTO medicamento (id, nombre) VALUES (1, 'IBUPROFENO 600'), (2, 'DICLOFENA 400');
 
 
-INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 1);
-INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 2);
-INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 3);
-INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 4);
-INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 5);
-INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 6);
-
-
-INSERT INTO categoria (id_categoria, nombre) VALUES (1, 'dentista');
-INSERT INTO categoria (id_categoria, nombre) VALUES (2, 'oftalmologo');
-INSERT INTO categoria (id_categoria, nombre) VALUES (3, 'guardia');
-
 INSERT INTO vacuna (id, nombre) VALUES (1, 'moderna'), (2, 'gripe'), (3, 'varicela'), (4, 'hepatitis A');
-
 
 INSERT INTO grupo_sanguineo (id, nombre) VALUES
  (1, 'O negativo'),
@@ -54,10 +48,7 @@ INSERT INTO grupo_sanguineo (id, nombre) VALUES
  (8, 'AB positivo');
  
  
- 
-
-
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('CARLOS', 'RUIZ', '72302301' , 'carlos@gmail.com', '991855511');
+INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('CARLOS', 'RUIZ', '1' , 'carlos@gmail.com', '991855511');
 INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('ANDRES', 'RUIZ', '72301302' , 'carlos@gmail.com', '991855512');
 INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('ANA', 'RUIZ', '72301303' , 'carlos@gmail.com', '991855513');
 INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('MARIA', 'RUIZ', '72301304' , 'carlos@gmail.com', '991855514');

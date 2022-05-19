@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Paciente {
@@ -48,7 +49,6 @@ public class Paciente {
 	@OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
 	private List<Consulta> consulta;
 	
-	
 	@ManyToOne()
 	@JoinColumn(name = "localidad_id")
 	private Localidad localidad;
@@ -73,6 +73,30 @@ public class Paciente {
 	@JoinColumn(name = "obra_social_id")
 	private Obra_Social obra_Social;
 	
+	private Integer numero_de_afiliado;
+	
+	public Integer getNumero_de_afiliado() {
+		return numero_de_afiliado;
+	}
+
+	public void setNumero_de_afiliado(Integer numero_de_afiliado) {
+		this.numero_de_afiliado = numero_de_afiliado;
+	}
+
+	public Ficha_Medica getFicha_medica() {
+		return ficha_medica;
+	}
+
+	public void setFicha_medica(Ficha_Medica ficha_medica) {
+		this.ficha_medica = ficha_medica;
+	}
+
+	@OneToOne(cascade=CascadeType.ALL)//one-to-one
+    @JoinColumn(name="ficha_medica_id")
+    private Ficha_Medica ficha_medica;
+	
+	
+  
 	public Integer getId() {
 		return Id;
 	}
@@ -220,6 +244,9 @@ public class Paciente {
 		this.historial_vacuna = historial_vacuna;
 	}
 
+
+
+	
 
 	
 	

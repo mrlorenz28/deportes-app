@@ -2,18 +2,16 @@ package com.mitocode.service;
 
 import java.util.List;
 
-import com.mitocode.model.Grupo_sanguineo;
+import com.mitocode.model.Localidad;
 import com.mitocode.model.Paciente;
+import com.mitocode.model.Provincia;
 
-public interface IPacienteService  {
-
-
-		Paciente registrar(Paciente p) throws Exception;
-
-		Paciente modificar(Paciente p) throws Exception;
+public interface IConsultaService  {
 
 		List<Paciente> listar() throws Exception;
 		
+		byte[] generarReporte(Integer dni);
+
 		Paciente ListarPorId(Integer id) throws Exception;
 
 		void eliminar(Integer id) throws Exception;
@@ -21,6 +19,10 @@ public interface IPacienteService  {
 		Paciente ListarPorDni(Integer dni) throws Exception;
 		
 		List<Paciente> ListarPorApellido(String apellido) throws Exception;
+
+		List<Provincia> listarProvincia();
+		
+		List<Localidad> ListarLocalidadPorId(Integer id) throws Exception;
 
 
 		
