@@ -21,6 +21,8 @@ public interface IPacienteService  {
 		Paciente ListarPorDni(Integer dni) throws Exception;
 		
 		List<Paciente> ListarPorApellido(String apellido) throws Exception;
+		
+		List<Paciente> listarSinExamen();
 
 
 		

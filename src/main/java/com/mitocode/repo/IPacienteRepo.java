@@ -18,6 +18,7 @@ public interface IPacienteRepo extends JpaRepository<Paciente, Integer> {
 	@Query(value ="Select * FROM paciente p where apellido LIKE %:apellido% OR nombre LIKE %:apellido%", nativeQuery = true)
 	List<Paciente> listarPorApellido(@Param("apellido") String apellido);
 	
-	
+	@Query(value ="Select * FROM paciente p left join examen_fisico e on e.paciente_id = p.id where e.paciente_id is null", nativeQuery = true)
+	List<Paciente> listarSinExamen();
 }
 	

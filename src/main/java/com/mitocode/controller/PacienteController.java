@@ -66,6 +66,11 @@ public class PacienteController {
 		return service.ListarPorApellido(apellido);
 	}
 	
+	@GetMapping("/listarSinExamen")
+	public List<Paciente> listarSinExamen() throws Exception{
+		return service.listarSinExamen();
+	}
+	
 	@PostMapping
 	public Paciente registrar(@RequestBody Paciente p) throws Exception {
 		return service.registrar(p);

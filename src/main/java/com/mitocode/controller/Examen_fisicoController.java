@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.mitocode.model.Ayuda;
+import com.mitocode.model.Cardiologo;
 import com.mitocode.model.Examen_Fisico;
 import com.mitocode.model.Ficha_Medica;
 import com.mitocode.model.Grupo_sanguineo;
@@ -27,7 +30,6 @@ import com.mitocode.repo.IVacunaRepo;
 import com.mitocode.service.IExamen_Fisico_Service;
 import com.mitocode.service.IHistorial_VacunasService;
 import com.mitocode.service.IPacienteService;
-
 
 
 @RestController
@@ -47,9 +49,29 @@ public class Examen_fisicoController {
 		return service.ListarPorId(id);
 	}
 	
+	@GetMapping("/cardiologo-pendiente")
+	public List<Examen_Fisico> listarCardiologoPendiente() throws Exception{
+		return service.listarCardiologoPendiente();
+	}
+	
+	@GetMapping("/pediatra-pendiente")
+	public List<Examen_Fisico> listarPediatraPendiente() throws Exception{
+		return service.listarPediatraPendiente();
+	}
+	
+	@GetMapping("/enfermera-pendiente")
+	public List<Examen_Fisico> listarEnfermeraPendiente() throws Exception{
+		return service.listarEnfermeraPendiente();
+	}
+	
 	@PostMapping
 	public Examen_Fisico registrar(@RequestBody Examen_Fisico p) throws Exception {
 		return service.registrar(p);
+	}
+	
+	@PutMapping
+	public Examen_Fisico modificar(@RequestBody Examen_Fisico p) throws Exception {
+		return service.modificar(p);
 	}
 	
 

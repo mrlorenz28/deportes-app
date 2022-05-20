@@ -58,5 +58,10 @@ public class PacienteServiceImpl implements IPacienteService {
 		
 	}
 
+	@Override
+	public List<Paciente> listarSinExamen() {
+		return repo.listarSinExamen();
+	}
+
 	
 }

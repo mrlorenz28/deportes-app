@@ -84,8 +84,30 @@ public class Examen_Fisico_ServiceImpl implements IExamen_Fisico_Service {
 
 	@Override
 	public Examen_Fisico ListarPorId(Integer id) {
-		
-		return repo.listarPorId(id);
+		Optional<Examen_Fisico> op = repo.findById(id);
+		return op.isPresent() ? op.get() : new Examen_Fisico();
+	}
+
+	@Override
+	public List<Examen_Fisico> listarCardiologoPendiente() {
+		// TODO Auto-generated method stub
+		return repo.listarCardiologoPendiente();
+	}
+
+	@Override
+	public Examen_Fisico modificar(Examen_Fisico p) {
+		// TODO Auto-generated method stub
+		return repo.save(p);
+	}
+
+	@Override
+	public List<Examen_Fisico> listarPediatraPendiente() {
+		return repo.listarPediatraPendiente();
+	}
+
+	@Override
+	public List<Examen_Fisico> listarEnfermeraPendiente() {
+		return repo.listarEnfermeraPendiente();
 	}
 
 

@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -23,7 +24,7 @@ public class Paciente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Id;
+	private Integer id;
 	
 	private String nombre;
 	
@@ -90,19 +91,31 @@ public class Paciente {
 	public void setFicha_medica(Ficha_Medica ficha_medica) {
 		this.ficha_medica = ficha_medica;
 	}
-
+	
 	@OneToOne(cascade=CascadeType.ALL)//one-to-one
     @JoinColumn(name="ficha_medica_id")
     private Ficha_Medica ficha_medica;
 	
-	
+	@JsonIgnore
+	@OneToMany(mappedBy = "paciente")
+	private List<Examen_Fisico> examen;
   
+	public List<Examen_Fisico> getExamen() {
+		return examen;
+	}
+
+	public void setExamen(List<Examen_Fisico> examen) {
+		this.examen = examen;
+	}
+
+
+
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getNombre() {

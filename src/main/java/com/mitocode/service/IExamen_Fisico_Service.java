@@ -11,6 +11,8 @@ public interface IExamen_Fisico_Service  {
 	List<Examen_Fisico> listar();
 	
 	Examen_Fisico registrar(Examen_Fisico p);
+	
+	Examen_Fisico modificar(Examen_Fisico p);
 
 	List<Examen_Fisico> listarPendiente();
 
@@ -19,8 +21,17 @@ public interface IExamen_Fisico_Service  {
 	List<Examen_Fisico> listarDesaprobado();
 
 	List<Examen_Fisico> listarAprobado();
+	
+	List<Examen_Fisico> listarCardiologoPendiente();
 
 	Examen_Fisico ListarPorId(Integer id);
+	
+	List<Examen_Fisico> listarPediatraPendiente();
+	
+	List<Examen_Fisico> listarEnfermeraPendiente();
+
+	
+	
 
 	
 		
