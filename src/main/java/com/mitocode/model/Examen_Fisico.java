@@ -34,8 +34,18 @@ public class Examen_Fisico {
 	@OneToOne(cascade = CascadeType.ALL)
     private Enfermera enfermera;
 	
-	@ManyToOne
+	private String estado;
+
+	@ManyToOne(optional = false)
 	private Paciente paciente;
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
 
 	public Paciente getPaciente() {
 		return paciente;

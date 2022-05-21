@@ -12,16 +12,16 @@ import com.mitocode.model.Examen_Fisico;
 
 public interface IExamen_FisicoRepo extends JpaRepository<Examen_Fisico, Integer> {
 
-	@Query(value ="Select * FROM examen_fisico e where estado = :pendiente", nativeQuery = true)
+	@Query(value ="Select * FROM examen_fisico e where e.estado = 'pendiente'", nativeQuery = true)
 	List<Examen_Fisico> listarPendiente();
 	
-	@Query(value ="Select * FROM examen_fisico e where estado = :rechazado", nativeQuery = true)
+	@Query(value ="Select * FROM examen_fisico e where e.estado = 'rechazado'", nativeQuery = true)
 	List<Examen_Fisico> listarRechazado();
 	
-	@Query(value ="Select * FROM examen_fisico e where estado = :desaprobado", nativeQuery = true)
+	@Query(value ="Select * FROM examen_fisico e where e.estado = 'desaprobado'", nativeQuery = true)
 	List<Examen_Fisico> listarDesaprobado();
 	
-	@Query(value ="Select * FROM examen_fisico e where estado = :aprobado", nativeQuery = true)
+	@Query(value ="Select * FROM examen_fisico e where e.estado = 'aprobado'", nativeQuery = true)
 	List<Examen_Fisico> listarAprobado();
 	
 	@Query(value ="Select * FROM examen_fisico e where id = :id", nativeQuery = true)
@@ -35,6 +35,8 @@ public interface IExamen_FisicoRepo extends JpaRepository<Examen_Fisico, Integer
 	
 	@Query(value ="select * from examen_fisico where enfermera_id is null", nativeQuery = true)
 	List<Examen_Fisico> listarEnfermeraPendiente();
+	
+	
 	
 	
 }

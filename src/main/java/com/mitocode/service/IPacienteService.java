@@ -24,6 +24,6 @@ public interface IPacienteService  {
 		
 		List<Paciente> listarSinExamen();
 
-
+		List<Paciente> listarSinExamenPorClub(Integer id);
 		
 }

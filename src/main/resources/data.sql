@@ -47,6 +47,12 @@ INSERT INTO grupo_sanguineo (id, nombre) VALUES
  (7, 'AB negativo'),
  (8, 'AB positivo');
  
+ INSERT INTO club (id, nombre) VALUES
+ (1, 'alsina'),
+ (2, 'viamonte'),
+ (3, 'coliqueo'),
+ (4, 'river plate');
+ 
  
 INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('CARLOS', 'RUIZ', '1' , 'carlos@gmail.com', '991855511');
 INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('ANDRES', 'RUIZ', '72301302' , 'carlos@gmail.com', '991855512');
@@ -65,32 +71,6 @@ INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('MANUEL', '
 INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('MARCOS', 'RUIZ', '72301316' , 'carlos@gmail.com', '991855562');
 INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('KARLA', 'RUIZ', '72301391' , 'carlos@gmail.com', '991855563');
 INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('CARLOS', 'RUIZ', '72301801' , 'carlos@gmail.com', '991855564');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('EDUARDO', 'RUIZ', '72308301' , 'carlos@gmail.com', '991855565');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('LESTER', 'RUIZ', '72301901' , 'carlos@gmail.com', '991855566');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('ERIKA', 'RUIZ', '72301381' , 'carlos@gmail.com', '991855567');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('TOMAS', 'RUIZ', '72301311' , 'carlos@gmail.com', '991855568');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('TOMASA', 'RUIZ', '72301491' , 'carlos@gmail.com', '991855569');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('TITO', 'RUIZ', '72301953' , 'carlos@gmail.com', '991855570');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('YAHAIRA', 'RUIZ', '72301341' , 'carlos@gmail.com', '991855571');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('BRAYAN', 'RUIZ', '72301342' , 'carlos@gmail.com', '991855572');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('KEVIN', 'RUIZ', '72301343' , 'carlos@gmail.com', '991855573');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('BRITTANY', 'RUIZ', '72301344' , 'carlos@gmail.com', '991855574');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('JULIO', 'RUIZ', '72301345' , 'carlos@gmail.com', '991855575');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('JULIA', 'RUIZ', '72301346' , 'carlos@gmail.com', '991855576');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('CESAR', 'RUIZ', '72301347' , 'carlos@gmail.com', '991855577');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('PAOLO', 'RUIZ', '72301348' , 'carlos@gmail.com', '991855578');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('PAOLA', 'RUIZ', '72301349' , 'carlos@gmail.com', '991855579');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('YOSHIMAR', 'RUIZ', '72301350' , 'carlos@gmail.com', '991855580');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('LIONEL', 'RUIZ', '72301351' , 'carlos@gmail.com', '991855581');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('SERGIO', 'RUIZ', '72301352' , 'carlos@gmail.com', '991855582');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('JOHAN', 'RUIZ', '72301353' , 'carlos@gmail.com', '991855583');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('NEYMAR', 'RUIZ', '72301354' , 'carlos@gmail.com', '991855584');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('LUKA', 'RUIZ', '72301355' , 'carlos@gmail.com', '991855585');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('GERARD', 'RUIZ', '72301356' , 'carlos@gmail.com', '991855586');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('RAFAEL', 'RUIZ', '72301357' , 'carlos@gmail.com', '991855587');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('LUIS', 'RUIZ', '72301358' , 'carlos@gmail.com', '991855588');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('MIGUEL', 'RUIZ', '72301359' , 'carlos@gmail.com', '991855589');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('CRISTIAN', 'RUIZ', '72301360' , 'carlos@gmail.com', '991855590');
 
 INSERT INTO historial_vacuna (id, vacuna_id, paciente_id) VALUES (1, 1, 1), (2, 2, 1), (3, 3, 1), (4, 4, 1);
 

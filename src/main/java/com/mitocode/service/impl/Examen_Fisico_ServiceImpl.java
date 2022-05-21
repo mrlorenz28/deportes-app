@@ -44,7 +44,7 @@ public class Examen_Fisico_ServiceImpl implements IExamen_Fisico_Service {
 
 	@Override
 	public List<Examen_Fisico> listarPendiente() {
-		return repo.listarAprobado();
+		return repo.listarPendiente();
 	}
 
 	@Override

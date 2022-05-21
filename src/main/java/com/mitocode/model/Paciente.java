@@ -70,6 +70,10 @@ public class Paciente {
 	@OneToMany(mappedBy = "paciente")
 	private List<Historial_Vacuna> historial_vacuna;
 	
+	@OneToOne()
+    @JoinColumn(name="club_id")
+	private Club club;
+	
 	@ManyToOne()
 	@JoinColumn(name = "obra_social_id")
 	private Obra_Social obra_Social;

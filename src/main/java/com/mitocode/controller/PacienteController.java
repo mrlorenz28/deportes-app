@@ -71,6 +71,13 @@ public class PacienteController {
 		return service.listarSinExamen();
 	}
 	
+	@GetMapping("/listarSinExamenPorClub/{id}")
+	public List<Paciente> listarSinExamenPorClub(@PathVariable("apellido") Integer id) throws Exception{
+		return service.listarSinExamenPorClub(id);
+	}
+	
+	
+	
 	@PostMapping
 	public Paciente registrar(@RequestBody Paciente p) throws Exception {
 		return service.registrar(p);

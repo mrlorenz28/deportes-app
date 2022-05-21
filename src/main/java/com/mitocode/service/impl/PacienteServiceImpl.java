@@ -63,5 +63,12 @@ public class PacienteServiceImpl implements IPacienteService {
 		return repo.listarSinExamen();
 	}
 
+
+	@Override
+	public List<Paciente> listarSinExamenPorClub(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }

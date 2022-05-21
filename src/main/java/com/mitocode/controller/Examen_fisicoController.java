@@ -54,6 +54,16 @@ public class Examen_fisicoController {
 		return service.listarCardiologoPendiente();
 	}
 	
+	@GetMapping("/listar-aprobado")
+	public List<Examen_Fisico> listarAprobado() throws Exception{
+		return service.listarAprobado();
+	}
+	
+	@GetMapping("/listar-pendiente")
+	public List<Examen_Fisico> listarPendiente() throws Exception{
+		return service.listarPendiente();
+	}
+	
 	@GetMapping("/pediatra-pendiente")
 	public List<Examen_Fisico> listarPediatraPendiente() throws Exception{
 		return service.listarPediatraPendiente();
@@ -73,6 +83,8 @@ public class Examen_fisicoController {
 	public Examen_Fisico modificar(@RequestBody Examen_Fisico p) throws Exception {
 		return service.modificar(p);
 	}
+	
+	
 	
 
 }

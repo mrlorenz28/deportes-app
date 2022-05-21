@@ -71,9 +71,10 @@ public class ConsultaServiceImpl implements IConsultaService {
 		Paciente p = null;
 		try {
 			p = this.ListarPorDni(dni);
+			System.out.println(p.getApellido());
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			
 		}
 
 		Map<String, Object> parametros = new HashMap<String, Object>();
