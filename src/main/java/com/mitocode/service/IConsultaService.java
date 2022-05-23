@@ -2,6 +2,7 @@ package com.mitocode.service;
 
 import java.util.List;
 
+import com.mitocode.model.Examen_Fisico;
 import com.mitocode.model.Localidad;
 import com.mitocode.model.Paciente;
 import com.mitocode.model.Provincia;
@@ -10,7 +11,7 @@ public interface IConsultaService  {
 
 		List<Paciente> listar() throws Exception;
 		
-		byte[] generarReporte(Integer dni);
+		byte[] generarReporte(Examen_Fisico examen);
 
 		Paciente ListarPorId(Integer id) throws Exception;
 

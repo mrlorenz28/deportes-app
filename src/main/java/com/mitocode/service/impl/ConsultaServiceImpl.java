@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
+import com.mitocode.model.Examen_Fisico;
 import com.mitocode.model.Localidad;
 import com.mitocode.model.Paciente;
 import com.mitocode.model.Provincia;
@@ -66,23 +67,20 @@ public class ConsultaServiceImpl implements IConsultaService {
 
 	
 	@Override
-	public byte[] generarReporte(Integer dni) {
+	public byte[] generarReporte(Examen_Fisico examen) {
 		byte[] data = null;
-		Paciente p = null;
-		try {
-			p = this.ListarPorDni(dni);
-			System.out.println(p.getApellido());
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			
-		}
+	
 
 		Map<String, Object> parametros = new HashMap<String, Object>();
-		parametros.put("txt_dni", p.getDni());
-		parametros.put("txt_nombre", p.getNombre() + " " + p.getApellido());
-		parametros.put("txt_dia", p.getFecha_de_nacimiento().getDayOfMonth());
-		parametros.put("txt_mes", p.getFecha_de_nacimiento().getMonthValue());
-		parametros.put("txt_año", p.getFecha_de_nacimiento().getYear());
+		parametros.put("txt_dni", examen.getPaciente().getDni());
+		parametros.put("txt_nombre", examen.getPaciente().getNombre() + " " + examen.getPaciente().getApellido());
+		parametros.put("txt_dia", examen.getPaciente().getFecha_de_nacimiento().getDayOfMonth());
+		parametros.put("txt_mes", examen.getPaciente().getFecha_de_nacimiento().getMonthValue());
+		parametros.put("txt_año", examen.getPaciente().getFecha_de_nacimiento().getYear());
+		parametros.put("txt_alta", examen.getFechaDeAlta());
+
+
+		
 		DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
 		try {

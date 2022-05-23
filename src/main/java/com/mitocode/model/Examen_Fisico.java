@@ -1,5 +1,7 @@
 package com.mitocode.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -35,6 +37,17 @@ public class Examen_Fisico {
     private Enfermera enfermera;
 	
 	private String estado;
+	
+	private LocalDate fechaDeAlta;
+	
+
+	public LocalDate getFechaDeAlta() {
+		return fechaDeAlta;
+	}
+
+	public void setFechaDeAlta(LocalDate fechaDeAlta) {
+		this.fechaDeAlta = fechaDeAlta;
+	}
 
 	@ManyToOne(optional = false)
 	private Paciente paciente;

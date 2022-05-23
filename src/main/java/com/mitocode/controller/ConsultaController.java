@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mitocode.model.Diagnostico;
+import com.mitocode.model.Examen_Fisico;
 import com.mitocode.model.Grupo_sanguineo;
 import com.mitocode.model.Historial_Vacuna;
 import com.mitocode.model.Localidad;
@@ -88,10 +89,10 @@ public class ConsultaController {
 	}
 	
 	
-	@GetMapping(value = "/generarReporte/dni/{dni}", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
-	public ResponseEntity<byte[]> generarReporte(@PathVariable("dni") Integer dni) {
+	@GetMapping(value = "/generarReporte", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+	public ResponseEntity<byte[]> generarReporte(@RequestBody Examen_Fisico examen) {
 		byte[] data = null;
-		data = consulta.generarReporte(dni);
+		data = consulta.generarReporte(examen);
 		return new ResponseEntity<byte[]>(data, HttpStatus.OK);
 	}
 	
