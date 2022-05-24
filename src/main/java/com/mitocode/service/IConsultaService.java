@@ -11,7 +11,7 @@ public interface IConsultaService  {
 
 		List<Paciente> listar() throws Exception;
 		
-		byte[] generarReporte(Examen_Fisico examen);
+		byte[] generarReporte(Integer id);
 
 		Paciente ListarPorId(Integer id) throws Exception;
 

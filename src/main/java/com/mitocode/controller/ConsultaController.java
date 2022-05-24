@@ -89,10 +89,10 @@ public class ConsultaController {
 	}
 	
 	
-	@GetMapping(value = "/generarReporte", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
-	public ResponseEntity<byte[]> generarReporte(@RequestBody Examen_Fisico examen) {
+	@GetMapping(value = "/generarReporte/{id}", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+	public ResponseEntity<byte[]> generarReporte(@PathVariable("id") Integer id) {
 		byte[] data = null;
-		data = consulta.generarReporte(examen);
+		data = consulta.generarReporte(id);
 		return new ResponseEntity<byte[]>(data, HttpStatus.OK);
 	}
 	

@@ -16,6 +16,7 @@ import com.mitocode.model.Localidad;
 import com.mitocode.model.Paciente;
 import com.mitocode.model.Provincia;
 import com.mitocode.repo.IConsultaRepo;
+import com.mitocode.repo.IExamen_FisicoRepo;
 import com.mitocode.repo.ILocalidadRepo;
 import com.mitocode.repo.IPacienteRepo;
 import com.mitocode.repo.IProvinciaRepo;
@@ -40,6 +41,9 @@ public class ConsultaServiceImpl implements IConsultaService {
 	
 	@Autowired
 	private ILocalidadRepo repoLocalidad;
+	
+	@Autowired
+	private IExamen_FisicoRepo repoExamen;
 	
 
 	@Override
@@ -67,9 +71,14 @@ public class ConsultaServiceImpl implements IConsultaService {
 
 	
 	@Override
-	public byte[] generarReporte(Examen_Fisico examen) {
+	public byte[] generarReporte(Integer id) {
 		byte[] data = null;
-	
+		Examen_Fisico examen = new Examen_Fisico();
+		try {
+			examen = repoExamen.listarPorId(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 
 		Map<String, Object> parametros = new HashMap<String, Object>();
 		parametros.put("txt_dni", examen.getPaciente().getDni());
@@ -77,7 +86,7 @@ public class ConsultaServiceImpl implements IConsultaService {
 		parametros.put("txt_dia", examen.getPaciente().getFecha_de_nacimiento().getDayOfMonth());
 		parametros.put("txt_mes", examen.getPaciente().getFecha_de_nacimiento().getMonthValue());
 		parametros.put("txt_año", examen.getPaciente().getFecha_de_nacimiento().getYear());
-		parametros.put("txt_alta", examen.getFechaDeAlta());
+		parametros.put("txt_alta", examen.getFechaDeAlta().toString());
 
 
 		

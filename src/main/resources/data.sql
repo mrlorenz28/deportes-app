@@ -30,13 +30,6 @@ INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 4);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 5);
 
 
-INSERT INTO diagnostico (id, nombre) VALUES (1, 'DOLOR AGUDO'), (2, 'DOLOR GRAVE');
-INSERT INTO procedimiento (id, nombre) VALUES (1, 'Medicación Respiratoria Administrada Mediante Nebulizador'), (2, 'Administración De Infusión De Hierro');
-INSERT INTO medicamento (id, nombre) VALUES (1, 'IBUPROFENO 600'), (2, 'DICLOFENA 400');
-
-
-INSERT INTO vacuna (id, nombre) VALUES (1, 'moderna'), (2, 'gripe'), (3, 'varicela'), (4, 'hepatitis A');
-
 INSERT INTO grupo_sanguineo (id, nombre) VALUES
  (1, 'O negativo'),
  (2, 'O positivo'),
@@ -45,34 +38,16 @@ INSERT INTO grupo_sanguineo (id, nombre) VALUES
  (5, 'B negativo'),
  (6, 'B positivo'),
  (7, 'AB negativo'),
- (8, 'AB positivo');
+ (8, 'AB positivo') on conflict (id) do nothing;
  
  INSERT INTO club (id, nombre) VALUES
  (1, 'alsina'),
  (2, 'viamonte'),
  (3, 'coliqueo'),
- (4, 'river plate');
+ (4, 'river plate'),
+ (5, 'la delfina'),
+ (6, 'ignacio coliqueo') on conflict (id) do nothing;
  
- 
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('CARLOS', 'RUIZ', '1' , 'carlos@gmail.com', '991855511');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('ANDRES', 'RUIZ', '72301302' , 'carlos@gmail.com', '991855512');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('ANA', 'RUIZ', '72301303' , 'carlos@gmail.com', '991855513');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('MARIA', 'RUIZ', '72301304' , 'carlos@gmail.com', '991855514');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('KAREN', 'RUIZ', '72301305' , 'carlos@gmail.com', '991855512');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('LUIS', 'RUIZ', '72301306' , 'carlos@gmail.com', '991855513');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('JOSE', 'RUIZ', '72301307' , 'carlos@gmail.com', '991855514');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('EDGAR', 'RUIZ', '72301308' , 'carlos@gmail.com', '991855588');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('ROBERTO', 'RUIZ', '72301309' , 'carlos@gmail.com', '991855522');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('MIA', 'RUIZ', '72301310' , 'carlos@gmail.com', '991855566');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('JEREMY', 'RUIZ', '72301322' , 'carlos@gmail.com', '991855557');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('PEPE', 'RUIZ', '72301312' , 'carlos@gmail.com', '991855541');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('KATHY', 'RUIZ', '72301313' , 'carlos@gmail.com', '991855565');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('MANUEL', 'RUIZ', '72301314' , 'carlos@gmail.com', '991855561');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('MARCOS', 'RUIZ', '72301316' , 'carlos@gmail.com', '991855562');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('KARLA', 'RUIZ', '72301391' , 'carlos@gmail.com', '991855563');
-INSERT INTO paciente(nombre, apellido, dni, correo, telefono) VALUES('CARLOS', 'RUIZ', '72301801' , 'carlos@gmail.com', '991855564');
-
-INSERT INTO historial_vacuna (id, vacuna_id, paciente_id) VALUES (1, 1, 1), (2, 2, 1), (3, 3, 1), (4, 4, 1);
 
 
 INSERT INTO provincia (id, nombre) VALUES
@@ -100,7 +75,7 @@ INSERT INTO provincia (id, nombre) VALUES
 (22, 'Santa Fe'),
 (23, 'Santiago del Estero'),
 (24, 'Tierra del Fuego'),
-(25, 'Tucumán');
+(25, 'Tucumán') on conflict (id) do nothing;
 
 INSERT INTO localidad (id, id_provincia, nombre) VALUES
 (1, 1, '25 de Mayo'),
@@ -2484,6 +2459,6 @@ INSERT INTO localidad (id, id_provincia, nombre) VALUES
 (2379, 25, 'Villa Quinteros'),
 (2380, 25, 'Yánima'),
 (2381, 25, 'Yerba Buena'),
-(2382, 25, 'Yerba Buena (S)');
+(2382, 25, 'Yerba Buena (S)') on conflict (id) do nothing;;
 
 
