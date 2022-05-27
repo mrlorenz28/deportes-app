@@ -63,9 +63,9 @@ public class Ficha_Medica {
 	
 	private Boolean tos_cronica;
 	
-	private Boolean meditacion_habitual;
+	private Boolean medicacion_habitual;
 	
-	private Boolean alegria_a_medicamento;
+	private Boolean alergia_a_medicamento;
 	
 	private Boolean consume_minerales_energizante_suplementos;
 	
@@ -256,20 +256,20 @@ public class Ficha_Medica {
 		this.tos_cronica = tos_cronica;
 	}
 
-	public Boolean getMeditacion_habitual() {
-		return meditacion_habitual;
+	public Boolean getMedicacion_habitual() {
+		return medicacion_habitual;
 	}
 
-	public void setMeditacion_habitual(Boolean meditacion_habitual) {
-		this.meditacion_habitual = meditacion_habitual;
+	public void setMedicacion_habitual(Boolean medicacion_habitual) {
+		this.medicacion_habitual = medicacion_habitual;
 	}
 
-	public Boolean getAlegria_a_medicamento() {
-		return alegria_a_medicamento;
+	public Boolean getAlergia_a_medicamento() {
+		return alergia_a_medicamento;
 	}
 
-	public void setAlegria_a_medicamento(Boolean alegria_a_medicamento) {
-		this.alegria_a_medicamento = alegria_a_medicamento;
+	public void setAlergia_a_medicamento(Boolean alergia_a_medicamento) {
+		this.alergia_a_medicamento = alergia_a_medicamento;
 	}
 
 	public Boolean getConsume_minerales_energizante_suplementos() {
@@ -407,6 +407,8 @@ public class Ficha_Medica {
 	public void setFamiliar_con_tos_cronica(Boolean familiar_con_tos_cronica) {
 		this.familiar_con_tos_cronica = familiar_con_tos_cronica;
 	}
+
+	
 	
 	
 	

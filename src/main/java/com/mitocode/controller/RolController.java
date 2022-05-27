@@ -27,10 +27,16 @@ public class RolController {
 		return service.listar();
 	}
 	
+	@GetMapping("/listarSinProgramador")
+	public List<Rol> listarSinProgramador() throws Exception{
+		return service.listarSinProgramador();
+	}
+	
 	@GetMapping("/{id}")
 	public Rol ListarPorId(@PathVariable("id") Integer id) throws Exception{
 		return service.ListarPorId(id);
 	}
+	
 	
 	@PostMapping
 	public Rol registrar(@RequestBody Rol p) throws Exception {

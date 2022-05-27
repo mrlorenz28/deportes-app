@@ -22,6 +22,7 @@ public class RolServiceImpl implements IRolService {
 	public Rol registrar(Rol p) throws Exception {
 		return repo.save(p);
 	}
+	
 
 	@Override
 	public Rol modificar(Rol p) throws Exception {
@@ -44,6 +45,13 @@ public class RolServiceImpl implements IRolService {
 	public void eliminar(Integer id) throws Exception {
 		repo.deleteById(id);
 		
+	}
+
+
+	@Override
+	public List<Rol> listarSinProgramador() throws Exception {
+		// TODO Auto-generated method stub
+		return repo.ListarSinProgramador();
 	}
 	
 }

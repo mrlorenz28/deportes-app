@@ -12,6 +12,8 @@ public interface IRolService  {
 		Rol modificar(Rol p) throws Exception;
 
 		List<Rol> listar() throws Exception;
+		
+		List<Rol> listarSinProgramador() throws Exception;
 
 		Rol ListarPorId(Integer id) throws Exception;
 

@@ -1,4 +1,4 @@
-INSERT INTO usuario (id_usuario, username, estado, clave) VALUES (1, 'admin', true, '$2a$10$/Se8jFFS45fT2uiJ8qq9kOL6afdgTcg70RYc.4C/NWvxKH7exjZFa') on conflict (id_usuario) do nothing;
+INSERT INTO usuario (id_usuario, username, estado, clave) VALUES (1, 'mgerez3', true, '$2a$10$/Se8jFFS45fT2uiJ8qq9kOL6afdgTcg70RYc.4C/NWvxKH7exjZFa') on conflict (id_usuario) do nothing;
 
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (1, 'Administracion', 'feed', '/pages/administracion') on conflict (id_menu) do nothing;
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (2, 'Cardiologo', 'favorite_border', '/pages/cardiologo') on conflict (id_menu) do nothing;
@@ -6,6 +6,12 @@ INSERT INTO menu (id_menu, nombre, icono, url) VALUES (3, 'Pediatra', 'child_car
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (4, 'Enfermera', 'vaccines', '/pages/enfermera') on conflict (id_menu) do nothing;
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (5, 'Usuarios', 'groups', '/pages/usuarios') on conflict (id_menu) do nothing;
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (6, 'Pacientes', 'people', '/pages/pacientes/listar') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (7, 'Formulario', 'person_add', '/pages/formulario') on conflict (id_menu) do nothing;
+
+
+
+
+INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (99, 'programador', '') on conflict (id_rol) do nothing;
 
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (1, 'administrador', '') on conflict (id_rol) do nothing;
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (2, 'cardiologo', '') on conflict (id_rol) do nothing;
@@ -14,20 +20,29 @@ INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (4, 'pediatra', '') on conf
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (5, 'db', '') on conflict (id_rol) do nothing;
 
 
-INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 1);
+INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 99);
+
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (1, 99);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 99);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 99);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 99);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 99);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 99);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (7, 99);
+
+
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 4);
+
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (1, 1);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 1);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 1);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 1);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 1);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (7, 1);
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 3);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 4);
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 5);
+
 
 
 INSERT INTO grupo_sanguineo (id, nombre) VALUES
@@ -41,12 +56,12 @@ INSERT INTO grupo_sanguineo (id, nombre) VALUES
  (8, 'AB positivo') on conflict (id) do nothing;
  
  INSERT INTO club (id, nombre) VALUES
- (1, 'alsina'),
- (2, 'viamonte'),
- (3, 'coliqueo'),
- (4, 'river plate'),
- (5, 'la delfina'),
- (6, 'ignacio coliqueo') on conflict (id) do nothing;
+ (1, 'Club Juventud Alsina'),
+ (2, 'Viamonte Futbol Club'),
+ (3, 'Club Ignacio Coliqueo'),
+ (4, 'Club Atletico River Plate'),
+ (5, 'Club Atletico La Delfina'),
+ (6, 'Club Ignacio Coliqueo') on conflict (id) do nothing;
  
 
 
