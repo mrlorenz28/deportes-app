@@ -38,6 +38,8 @@ public class Examen_Fisico {
 	
 	private String estado;
 	
+	private String motivo;
+	
 	private LocalDate fechaDeAlta;
 	
 
@@ -98,6 +100,14 @@ public class Examen_Fisico {
 
 	public void setEnfermera(Enfermera enfermera) {
 		this.enfermera = enfermera;
+	}
+
+	public String getMotivo() {
+		return motivo;
+	}
+
+	public void setMotivo(String motivo) {
+		this.motivo = motivo;
 	}
 	
 	

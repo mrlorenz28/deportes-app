@@ -2,6 +2,8 @@ package com.mitocode.service;
 
 import java.util.List;
 
+import org.springframework.data.repository.query.Param;
+
 import com.mitocode.model.Examen_Fisico;
 import com.mitocode.model.Paciente;
 
@@ -29,6 +31,8 @@ public interface IExamen_Fisico_Service  {
 	List<Examen_Fisico> listarPediatraPendiente();
 	
 	List<Examen_Fisico> listarEnfermeraPendiente();
+	
+	List<Examen_Fisico> listarPorEstado(String estado);
 
 	
 	

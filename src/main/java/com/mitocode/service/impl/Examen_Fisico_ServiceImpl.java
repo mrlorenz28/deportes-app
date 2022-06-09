@@ -17,7 +17,7 @@ import com.mitocode.model.Localidad;
 import com.mitocode.model.Paciente;
 import com.mitocode.model.Provincia;
 import com.mitocode.repo.IAyudaRepo;
-import com.mitocode.repo.IConsultaRepo;
+import com.mitocode.repo.IEstadisticaRepo;
 import com.mitocode.repo.IExamen_FisicoRepo;
 import com.mitocode.repo.ILocalidadRepo;
 import com.mitocode.repo.IPacienteRepo;
@@ -108,6 +108,12 @@ public class Examen_Fisico_ServiceImpl implements IExamen_Fisico_Service {
 	@Override
 	public List<Examen_Fisico> listarEnfermeraPendiente() {
 		return repo.listarEnfermeraPendiente();
+	}
+
+	@Override
+	public List<Examen_Fisico> listarPorEstado(String estado) {
+		// TODO Auto-generated method stub
+		return repo.listarPorEstado(estado);
 	}
 
 

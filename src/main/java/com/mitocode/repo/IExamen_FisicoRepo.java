@@ -24,13 +24,16 @@ public interface IExamen_FisicoRepo extends JpaRepository<Examen_Fisico, Integer
 	@Query(value ="Select * FROM examen_fisico e where e.estado = 'aprobado'", nativeQuery = true)
 	List<Examen_Fisico> listarAprobado();
 	
+	@Query(value ="Select * FROM examen_fisico e where e.estado = :estado", nativeQuery = true)
+	List<Examen_Fisico> listarPorEstado(@Param("estado") String estado);
+	
 	@Query(value ="Select * FROM examen_fisico e where id = :id", nativeQuery = true)
 	Examen_Fisico listarPorId(@Param("id") Integer id);
 	
 	@Query(value ="select * from examen_fisico where cardiologo_id is null", nativeQuery = true)
 	List<Examen_Fisico> listarCardiologoPendiente();
 	
-	@Query(value ="select * from examen_fisico where pediatra_id is null", nativeQuery = true)
+	@Query(value ="select * from examen_fisico e where e.pediatra_id is null or e.estado = 'pediatra'", nativeQuery = true)
 	List<Examen_Fisico> listarPediatraPendiente();
 	
 	@Query(value ="select * from examen_fisico where enfermera_id is null", nativeQuery = true)

@@ -3,6 +3,8 @@ package com.mitocode.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,13 +35,15 @@ public class ClubController {
 	}
 	
 	@PostMapping
-	public Club registrar(@RequestBody Club p) throws Exception {
-		return service.registrar(p);
+	public ResponseEntity<Club> registrar(@RequestBody Club p) throws Exception {
+		 p = service.registrar(p);
+		return new ResponseEntity<Club>(p, HttpStatus.OK);
 	}
 	
 	@PutMapping
-	public Club modificar(@RequestBody Club p) throws Exception {
-		return service.modificar(p);
+	public ResponseEntity<Club> modificar(@RequestBody Club p) throws Exception {
+		p =  service.modificar(p);
+		return new ResponseEntity<Club>(p, HttpStatus.OK);
 	}
 	
 	 

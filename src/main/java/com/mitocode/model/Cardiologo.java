@@ -37,6 +37,10 @@ public class Cardiologo {
 	
 	private String pulsos_femorales;
 	
+	private String observacion;
+
+	
+	
 	@JsonIgnore
 	@OneToOne(mappedBy = "cardiologo")
 	private Examen_Fisico examen;
@@ -113,6 +117,16 @@ public class Cardiologo {
 	public void setExamen(Examen_Fisico examen) {
 		this.examen = examen;
 	}
+
+	public String getObservacion() {
+		return observacion;
+	}
+
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
+
+
 	
 	
 

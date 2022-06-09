@@ -3,6 +3,8 @@ package com.mitocode.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mitocode.exception.ModeloNotFoundException;
+import com.mitocode.model.Examen_Fisico;
 import com.mitocode.model.Grupo_sanguineo;
 import com.mitocode.model.Historial_Vacuna;
 import com.mitocode.model.Paciente;
@@ -79,13 +83,19 @@ public class PacienteController {
 	
 	
 	@PostMapping
-	public Paciente registrar(@RequestBody Paciente p) throws Exception {
-		return service.registrar(p);
+	public ResponseEntity<Paciente> registrar(@RequestBody Paciente p) throws Exception {
+		Paciente obj = service.ListarPorDni(p.getDni());
+		if(obj != null) {
+			throw new ModeloNotFoundException("El dni ya se encuentra en el sistema");
+		}
+		Paciente paciente = service.registrar(p);
+		return new ResponseEntity<Paciente>(paciente, HttpStatus.OK);
 	}
 	
 	@PutMapping
-	public Paciente modificar(@RequestBody Paciente p) throws Exception {
-		return service.modificar(p);
+	public ResponseEntity<Paciente> modificar(@RequestBody Paciente p) throws Exception {
+		Paciente paciente = service.modificar(p);
+		return new ResponseEntity<Paciente>(paciente, HttpStatus.OK);
 	}
 	
 	 

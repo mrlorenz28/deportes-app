@@ -45,6 +45,10 @@ public class Paciente {
 	
 	private String sexo;
 	
+	@OneToOne()
+    @JoinColumn(name="tutor_id")
+	private Tutor tutor;
+	
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)

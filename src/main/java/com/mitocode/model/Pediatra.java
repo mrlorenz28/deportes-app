@@ -60,6 +60,14 @@ public class Pediatra {
 	private Boolean vacunacion_completa;
 	
 	private String observacion;
+	
+	private String estadio_tanner;
+	
+	private String menarca;
+	
+	private String ritmo_menstrual;
+	
+
 
 	
 	@JsonIgnore
@@ -277,6 +285,38 @@ public class Pediatra {
 		this.examen = examen;
 	}
 
+
+	public String getEstadio_tanner() {
+		return estadio_tanner;
+	}
+
+
+	public void setEstadio_tanner(String estadio_tanner) {
+		this.estadio_tanner = estadio_tanner;
+	}
+
+
+	public String getMenarca() {
+		return menarca;
+	}
+
+
+	public void setMenarca(String menarca) {
+		this.menarca = menarca;
+	}
+
+
+	public String getRitmo_menstrual() {
+		return ritmo_menstrual;
+	}
+
+
+	public void setRitmo_menstrual(String ritmo_menstrual) {
+		this.ritmo_menstrual = ritmo_menstrual;
+	}
+
+
+	
 	
 	
 	

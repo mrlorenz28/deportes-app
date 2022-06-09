@@ -6,8 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import com.mitocode.model.Ficha_Medica;
 import com.mitocode.model.Localidad;
 import com.mitocode.model.Paciente;
+
 
 
 public interface IConsultaRepo extends JpaRepository<Paciente, Integer> {
@@ -17,8 +19,6 @@ public interface IConsultaRepo extends JpaRepository<Paciente, Integer> {
 	
 	@Query(value ="Select * FROM paciente p where apellido LIKE %:apellido% OR nombre LIKE %:apellido%", nativeQuery = true)
 	List<Paciente> listarPorApellido(@Param("apellido") String apellido);
-	
-	
 	
 }
 	

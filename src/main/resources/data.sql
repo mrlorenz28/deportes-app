@@ -1,18 +1,17 @@
 INSERT INTO usuario (id_usuario, username, estado, clave) VALUES (1, 'mgerez3', true, '$2a$10$/Se8jFFS45fT2uiJ8qq9kOL6afdgTcg70RYc.4C/NWvxKH7exjZFa') on conflict (id_usuario) do nothing;
 
-INSERT INTO menu (id_menu, nombre, icono, url) VALUES (1, 'Administracion', 'feed', '/pages/administracion') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (1, 'Secretaria de salud', 'feed', '/pages/secretaria-de-salud') on conflict (id_menu) do nothing;
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (2, 'Cardiologo', 'favorite_border', '/pages/cardiologo') on conflict (id_menu) do nothing;
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (3, 'Pediatra', 'child_care', '/pages/pediatra') on conflict (id_menu) do nothing;
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (4, 'Enfermera', 'vaccines', '/pages/enfermera') on conflict (id_menu) do nothing;
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (5, 'Usuarios', 'groups', '/pages/usuarios') on conflict (id_menu) do nothing;
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (6, 'Pacientes', 'people', '/pages/pacientes/listar') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (6, 'Mis pacientes', 'people', '/pages/pacientes/listar') on conflict (id_menu) do nothing;
 INSERT INTO menu (id_menu, nombre, icono, url) VALUES (7, 'Formulario', 'person_add', '/pages/formulario') on conflict (id_menu) do nothing;
-
-
-
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (8, 'Base de datos', 'database', '/pages/base-de-datos') on conflict (id_menu) do nothing;
+INSERT INTO menu (id_menu, nombre, icono, url) VALUES (9, 'Estadistica', 'bar_chart', '/pages/estadistica') on conflict (id_menu) do nothing;
 
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (99, 'programador', '') on conflict (id_rol) do nothing;
-
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (1, 'administrador', '') on conflict (id_rol) do nothing;
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (2, 'cardiologo', '') on conflict (id_rol) do nothing;
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (3, 'enfermera', '') on conflict (id_rol) do nothing;
@@ -29,6 +28,9 @@ INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 99);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 99);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 99);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (7, 99);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (7, 99);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (8, 99);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (9, 99);
 
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 4);
@@ -42,6 +44,8 @@ INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 3);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 4);
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 5);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (8, 5);
+
 
 
 

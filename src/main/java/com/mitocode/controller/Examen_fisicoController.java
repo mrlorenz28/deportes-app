@@ -3,6 +3,8 @@ package com.mitocode.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,6 +51,11 @@ public class Examen_fisicoController {
 		return service.ListarPorId(id);
 	}
 	
+	@GetMapping("/listarPorEstado/{estado}")
+	public List<Examen_Fisico> ListarPorEstado(@PathVariable("estado") String estado) throws Exception{
+		return service.listarPorEstado(estado);
+	}
+	
 	@GetMapping("/cardiologo-pendiente")
 	public List<Examen_Fisico> listarCardiologoPendiente() throws Exception{
 		return service.listarCardiologoPendiente();
@@ -80,8 +87,9 @@ public class Examen_fisicoController {
 	}
 	
 	@PutMapping
-	public Examen_Fisico modificar(@RequestBody Examen_Fisico p) throws Exception {
-		return service.modificar(p);
+	public ResponseEntity<Examen_Fisico> modificar(@RequestBody Examen_Fisico p) throws Exception {
+		Examen_Fisico examen = service.modificar(p);
+		return new ResponseEntity<Examen_Fisico>(examen, HttpStatus.OK);
 	}
 	
 	
