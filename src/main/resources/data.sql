@@ -18,7 +18,6 @@ INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (3, 'enfermera', '') on con
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (4, 'pediatra', '') on conflict (id_rol) do nothing;
 INSERT INTO Rol (id_rol, nombre, descripcion) VALUES (5, 'db', '') on conflict (id_rol) do nothing;
 
-
 INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 99);
 
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (1, 99);

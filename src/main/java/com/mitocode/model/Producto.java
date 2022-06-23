@@ -1,8 +1,5 @@
 package com.mitocode.model;
 
-
-
-
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,20 +11,17 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-
 @Entity
-public class Diagnostico {
+public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private String nombre;
-	
 
+	private String descripcion;
 
-
-	
+	private String precio;
 
 	public Integer getId() {
 		return id;
@@ -45,12 +39,21 @@ public class Diagnostico {
 		this.nombre = nombre;
 	}
 
+	public String getDescripcion() {
+		return descripcion;
+	}
 
-	
-	
-	
-	
-	
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public String getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(String precio) {
+		this.precio = precio;
+	}
 
 	
 	

@@ -11,8 +11,8 @@
 	<groupId>com.hospitalv2</groupId>
 	<artifactId>hospitalv2-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hospitalv2-backend</name>
-	<description>Proyecto Hospital</description>
+	<name>tienda-backend</name>
+	<description>Tienda</description>
 	<packaging>war</packaging>
 
 	<properties>

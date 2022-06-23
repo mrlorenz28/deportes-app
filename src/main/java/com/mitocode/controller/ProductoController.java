@@ -3,6 +3,7 @@ package com.mitocode.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,39 +13,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mitocode.model.Cardiologo;
-import com.mitocode.service.ICardiologoService;
+import com.mitocode.model.Producto;
+import com.mitocode.repo.IProductoRepo;
+import com.mitocode.service.IProductoService;
 
 @RestController
-@RequestMapping("/cardiologo")
-public class CardiologoController {
+@RequestMapping("/producto")
+public class ProductoController {
 
 	@Autowired
-	private ICardiologoService service;
+	private IProductoRepo repo;
+	
 	
 	@GetMapping
-	public List<Cardiologo> listar() throws Exception{
-		return service.listar();
-	}
-	
-	@GetMapping("/{id}")
-	public Cardiologo ListarPorId(@PathVariable("id") Integer id) throws Exception{
-		return service.ListarPorId(id);
+	public List<Producto> listar() throws Exception{
+		return repo.findAll();
 	}
 	
 	@PostMapping
-	public Cardiologo registrar(@RequestBody Cardiologo p) throws Exception {
-		return service.registrar(p);
+	public Producto registrar(@RequestBody Producto p) throws Exception {
+		return repo.save(p);
 	}
+	
 	
 	@PutMapping
-	public Cardiologo modificar(@RequestBody Cardiologo p) throws Exception {
-		return service.modificar(p);
+	public Producto modificar(@RequestBody Producto p) throws Exception {
+		return repo.save(p);
 	}
 	
-	 
 	@DeleteMapping("/{id}")
 	public void eliminar(@PathVariable("id") Integer id) throws Exception{
-		service.eliminar(id);
+		 repo.deleteById(id);
 	}
 }

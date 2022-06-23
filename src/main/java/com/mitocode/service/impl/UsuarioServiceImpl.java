@@ -13,7 +13,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.User;
 
-import com.mitocode.model.Paciente;
 import com.mitocode.model.Usuario;
 import com.mitocode.repo.IUsuarioRepo;
 import com.mitocode.service.UsuarioService;

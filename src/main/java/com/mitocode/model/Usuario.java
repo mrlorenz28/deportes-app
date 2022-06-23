@@ -54,19 +54,12 @@ public class Usuario {
 	
 	
 	private String telefono;
-	
-	@ManyToMany()
-	@JoinTable(name = "usuario_categoria", joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "idUsuario"), inverseJoinColumns = @JoinColumn(name = "id_categoria", referencedColumnName = "idCategoria"))
-	private List<Categoria> categoria;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "idUsuario"), inverseJoinColumns = @JoinColumn(name = "id_rol", referencedColumnName = "idRol"))
 	private List<Rol> rol;
 	
-	@OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-	private Consulta consulta;
-
-
+	
 	public List<Rol> getRol() {
 		return rol;
 	}
@@ -147,13 +140,6 @@ public class Usuario {
 		this.telefono = telefono;
 	}
 
-	public List<Categoria> getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(List<Categoria> categoria) {
-		this.categoria = categoria;
-	}
 
 	public String getNombre() {
 		return nombre;
@@ -163,13 +149,6 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public Consulta getConsulta() {
-		return consulta;
-	}
-
-	public void setConsulta(Consulta consulta) {
-		this.consulta = consulta;
-	}
 
 
 	
